@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APEXModelStoreContainer" CdmEntityContainer="APEXEntities1">
+    <EntitySetMapping Name="TAbouts">
+      <EntityTypeMapping TypeName="APEXModel.TAbout">
+        <MappingFragment StoreEntitySet="TAbout">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="updDt" ColumnName="updDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAddresses">
+      <EntityTypeMapping TypeName="APEXModel.TAddress">
+        <MappingFragment StoreEntitySet="TAddress">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+          <ScalarProperty Name="toDate" ColumnName="toDate" />
+          <ScalarProperty Name="updDt" ColumnName="updDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TContacts">
+      <EntityTypeMapping TypeName="APEXModel.TContact">
+        <MappingFragment StoreEntitySet="TContact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="CrtDt" ColumnName="CrtDt" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEmployees">
+      <EntityTypeMapping TypeName="APEXModel.TEmployee">
+        <MappingFragment StoreEntitySet="TEmployee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="ResumeID" ColumnName="ResumeID" />
+          <ScalarProperty Name="MobileID" ColumnName="MobileID" />
+          <ScalarProperty Name="CrtDt" ColumnName="CrtDt" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEmployers">
+      <EntityTypeMapping TypeName="APEXModel.TEmployer">
+        <MappingFragment StoreEntitySet="TEmployer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="DUNSNumber" ColumnName="DUNSNumber" />
+          <ScalarProperty Name="AboutId" ColumnName="AboutId" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="CrtDt" ColumnName="CrtDt" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TManagers">
+      <EntityTypeMapping TypeName="APEXModel.TManager">
+        <MappingFragment StoreEntitySet="TManager">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TReferences">
+      <EntityTypeMapping TypeName="APEXModel.TReference">
+        <MappingFragment StoreEntitySet="TReferences">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="isVerified" ColumnName="isVerified" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TResumes">
+      <EntityTypeMapping TypeName="APEXModel.TResume">
+        <MappingFragment StoreEntitySet="TResume">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="AboutID" ColumnName="AboutID" />
+          <ScalarProperty Name="Objective" ColumnName="Objective" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="updDt" ColumnName="updDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRevenues">
+      <EntityTypeMapping TypeName="APEXModel.TRevenue">
+        <MappingFragment StoreEntitySet="TRevenue">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Curency" ColumnName="Curency" />
+          <ScalarProperty Name="CrtDt" ColumnName="CrtDt" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TUSERs">
+      <EntityTypeMapping TypeName="APEXModel.TUSER">
+        <MappingFragment StoreEntitySet="TUSER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAILVERIFIED" ColumnName="EMAILVERIFIED" />
+          <ScalarProperty Name="VERIFICATIONCODE" ColumnName="VERIFICATIONCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TworkHistories">
+      <EntityTypeMapping TypeName="APEXModel.TworkHistory">
+        <MappingFragment StoreEntitySet="TworkHistory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="CompId" ColumnName="CompId" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="RR" ColumnName="RR" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="updDt" ColumnName="updDt" />
+          <ScalarProperty Name="EMPLOYMENTID" ColumnName="EMPLOYMENTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TWorklocations">
+      <EntityTypeMapping TypeName="APEXModel.TWorklocation">
+        <MappingFragment StoreEntitySet="TWorklocation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ZIPcode" ColumnName="ZIPcode" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TWorkRoles">
+      <EntityTypeMapping TypeName="APEXModel.TWorkRole">
+        <MappingFragment StoreEntitySet="TWorkRoles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="WHID" ColumnName="WHID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="isCurrent" ColumnName="isCurrent" />
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="UpdDt" ColumnName="UpdDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="P_Ins_Employee" FunctionName="APEXModel.Store.P_Ins_Employee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APEXModel.P_Ins_Employee_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="P_Ins_User" FunctionName="APEXModel.Store.P_Ins_User">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APEXModel.P_Ins_User_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailVerified" ColumnName="EmailVerified" />
+          <ScalarProperty Name="IsExists" ColumnName="IsExists" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="P_InsWorkHistory" FunctionName="APEXModel.Store.P_InsWorkHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APEXModel.P_InsWorkHistory_Result">
+          <ScalarProperty Name="CompId" ColumnName="CompId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="WLStreet" ColumnName="WLStreet" />
+          <ScalarProperty Name="WLcity" ColumnName="WLcity" />
+          <ScalarProperty Name="WLstate" ColumnName="WLstate" />
+          <ScalarProperty Name="WLcountry" ColumnName="WLcountry" />
+          <ScalarProperty Name="WLzipcode" ColumnName="WLzipcode" />
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="ManagerEmail" ColumnName="ManagerEmail" />
+          <ScalarProperty Name="ManagerCountryCode" ColumnName="ManagerCountryCode" />
+          <ScalarProperty Name="managerMobNumb" ColumnName="managerMobNumb" />
+          <ScalarProperty Name="ManagerVerified" ColumnName="ManagerVerified" />
+          <ScalarProperty Name="RolesAndResp" ColumnName="RolesAndResp" />
+          <ScalarProperty Name="EmploymentID" ColumnName="EmploymentID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="CompanyVerified" ColumnName="CompanyVerified" />
+          <ScalarProperty Name="isCurrent" ColumnName="isCurrent" />
+          <ScalarProperty Name="WHID" ColumnName="WHID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="P_SEL_GET_EMPLOYEE_DETAILS" FunctionName="APEXModel.Store.P_SEL_GET_EMPLOYEE_DETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APEXModel.P_SEL_GET_EMPLOYEE_DETAILS_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="Empid" ColumnName="Empid" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="P_SEL_LOGIN" FunctionName="APEXModel.Store.P_SEL_LOGIN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APEXModel.P_SEL_LOGIN_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailVerified" ColumnName="EmailVerified" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="P_UPD_EMPLOYEE_DETAILS" FunctionName="APEXModel.Store.P_UPD_EMPLOYEE_DETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="APEXModel.P_UPD_EMPLOYEE_DETAILS_Result">
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COUNTRYCODE" ColumnName="COUNTRYCODE" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="TSkills">
+      <EntityTypeMapping TypeName="APEXModel.TSkill">
+        <MappingFragment StoreEntitySet="TSkills">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="crtDt" ColumnName="crtDt" />
+          <ScalarProperty Name="UsedYears" ColumnName="UsedYears" />
+          <ScalarProperty Name="SkillType" ColumnName="SkillType" />
+          <ScalarProperty Name="Skill" ColumnName="Skill" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

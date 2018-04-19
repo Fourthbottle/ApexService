@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APEXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TAbout">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="updDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TAddress">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Street" Type="nvarchar" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="ZipCode" Type="bigint" />
+    <Property Name="fromDate" Type="datetime" />
+    <Property Name="toDate" Type="datetime" />
+    <Property Name="updDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TContact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="Number" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerified" Type="int" />
+    <Property Name="CrtDt" Type="datetime" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TEmployee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" />
+    <Property Name="SSN" Type="int" />
+    <Property Name="ResumeID" Type="int" />
+    <Property Name="MobileID" Type="int" />
+    <Property Name="CrtDt" Type="datetime" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TEmployer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="AddressID" Type="int" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="DUNSNumber" Type="varchar" MaxLength="100" />
+    <Property Name="AboutId" Type="int" />
+    <Property Name="Revenue" Type="int" />
+    <Property Name="CrtDt" Type="datetime" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'APEX.dbo.TError' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TError">
+          <Property Name="ObjName" Type="varchar" MaxLength="70" />
+          <Property Name="ErrorMSg" Type="nvarchar(max)" />
+          <Property Name="crtDt" Type="datetime" />
+        </EntityType>-->
+  <EntityType Name="TManager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="contact" Type="int" />
+    <Property Name="IsVerified" Type="int" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TReferences">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="Relation" Type="varchar" MaxLength="30" />
+    <Property Name="Contact" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="isVerified" Type="int" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TResume">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skills" Type="nvarchar(max)" />
+    <Property Name="AboutID" Type="int" />
+    <Property Name="Objective" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="Website" Type="nvarchar" MaxLength="2000" />
+    <Property Name="updDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TRevenue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="20" />
+    <Property Name="Curency" Type="varchar" MaxLength="50" />
+    <Property Name="CrtDt" Type="datetime" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TSkills">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skill" Type="nvarchar" MaxLength="245" />
+    <Property Name="SkillType" Type="int" />
+    <Property Name="UsedYears" Type="decimal" Precision="3" Scale="1" />
+    <Property Name="crtDt" Type="datetime" />
+    <Property Name="EmpId" Type="int" />
+  </EntityType>
+  <EntityType Name="TUSER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="190" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="250" />
+    <Property Name="EMAILVERIFIED" Type="int" />
+    <Property Name="VERIFICATIONCODE" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="TworkHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="CompId" Type="int" />
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="RR" Type="int" />
+    <Property Name="location" Type="int" />
+    <Property Name="IsVerified" Type="int" />
+    <Property Name="updDt" Type="datetime" />
+    <Property Name="EMPLOYMENTID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TWorklocation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="100" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="ZIPcode" Type="varchar" MaxLength="20" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TWorkRoles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WHID" Type="int" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="200" />
+    <Property Name="isCurrent" Type="int" />
+    <Property Name="EmpType" Type="int" />
+    <Property Name="IsVerified" Type="int" />
+    <Property Name="UpdDt" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__TAddress__UserId__2FCF1A8A">
+    <End Role="TUSER" Type="Self.TUSER" Multiplicity="0..1" />
+    <End Role="TAddress" Type="Self.TAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TUSER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TAddress">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TEmployee__Mobil__30C33EC3">
+    <End Role="TContact" Type="Self.TContact" Multiplicity="0..1" />
+    <End Role="TEmployee" Type="Self.TEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TContact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TEmployee">
+        <PropertyRef Name="MobileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TEmployee__Resum__31B762FC">
+    <End Role="TResume" Type="Self.TResume" Multiplicity="0..1" />
+    <End Role="TEmployee" Type="Self.TEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TResume">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TEmployee">
+        <PropertyRef Name="ResumeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TEmployee__useri__32AB8735">
+    <End Role="TUSER" Type="Self.TUSER" Multiplicity="0..1" />
+    <End Role="TEmployee" Type="Self.TEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TUSER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TEmployee">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TEmployer__About__339FAB6E">
+    <End Role="TAbout" Type="Self.TAbout" Multiplicity="0..1" />
+    <End Role="TEmployer" Type="Self.TEmployer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAbout">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TEmployer">
+        <PropertyRef Name="AboutId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TEmployer__Addre__3493CFA7">
+    <End Role="TAddress" Type="Self.TAddress" Multiplicity="0..1" />
+    <End Role="TEmployer" Type="Self.TEmployer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAddress">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TEmployer">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TEmployer__Reven__3587F3E0">
+    <End Role="TRevenue" Type="Self.TRevenue" Multiplicity="0..1" />
+    <End Role="TEmployer" Type="Self.TEmployer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRevenue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TEmployer">
+        <PropertyRef Name="Revenue" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TManager__contac__367C1819">
+    <End Role="TContact" Type="Self.TContact" Multiplicity="0..1" />
+    <End Role="TManager" Type="Self.TManager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TContact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TManager">
+        <PropertyRef Name="contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TReferenc__Conta__37703C52">
+    <End Role="TContact" Type="Self.TContact" Multiplicity="0..1" />
+    <End Role="TReferences" Type="Self.TReferences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TContact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TReferences">
+        <PropertyRef Name="Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TReferenc__UserI__3864608B">
+    <End Role="TEmployee" Type="Self.TEmployee" Multiplicity="0..1" />
+    <End Role="TReferences" Type="Self.TReferences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEmployee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TReferences">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TResume__AboutID__395884C4">
+    <End Role="TAbout" Type="Self.TAbout" Multiplicity="0..1" />
+    <End Role="TResume" Type="Self.TResume" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAbout">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TResume">
+        <PropertyRef Name="AboutID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TSkills__EmpId__46B27FE2">
+    <End Role="TEmployee" Type="Self.TEmployee" Multiplicity="0..1" />
+    <End Role="TSkills" Type="Self.TSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEmployee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TSkills">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TworkHist__CompI__3A4CA8FD">
+    <End Role="TEmployer" Type="Self.TEmployer" Multiplicity="0..1" />
+    <End Role="TworkHistory" Type="Self.TworkHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEmployer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TworkHistory">
+        <PropertyRef Name="CompId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TworkHist__locat__3C34F16F">
+    <End Role="TWorklocation" Type="Self.TWorklocation" Multiplicity="0..1" />
+    <End Role="TworkHistory" Type="Self.TworkHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TWorklocation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TworkHistory">
+        <PropertyRef Name="location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TworkHist__Manag__3D2915A8">
+    <End Role="TManager" Type="Self.TManager" Multiplicity="0..1" />
+    <End Role="TworkHistory" Type="Self.TworkHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TManager">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TworkHistory">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TworkHistory__RR__3E1D39E1">
+    <End Role="TAbout" Type="Self.TAbout" Multiplicity="0..1" />
+    <End Role="TworkHistory" Type="Self.TworkHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAbout">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TworkHistory">
+        <PropertyRef Name="RR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TWorkRoles__WHID__3F115E1A">
+    <End Role="TworkHistory" Type="Self.TworkHistory" Multiplicity="0..1" />
+    <End Role="TWorkRoles" Type="Self.TWorkRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TworkHistory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TWorkRoles">
+        <PropertyRef Name="WHID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="P_Ins_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="SSN" Type="varchar" Mode="In" />
+    <Parameter Name="countryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="MobileNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Userid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="P_Ins_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="VerificationCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="P_InsWorkHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompId" Type="int" Mode="In" />
+    <Parameter Name="CompName" Type="varchar" Mode="In" />
+    <Parameter Name="Street" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="ZipCode" Type="bigint" Mode="In" />
+    <Parameter Name="ManagerFullName" Type="varchar" Mode="In" />
+    <Parameter Name="managerEmail" Type="varchar" Mode="In" />
+    <Parameter Name="managerCountryCode" Type="varchar" Mode="In" />
+    <Parameter Name="managerMobilenumb" Type="varchar" Mode="In" />
+    <Parameter Name="RolesRespon" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Empid" Type="int" Mode="In" />
+    <Parameter Name="fromDate" Type="datetime" Mode="In" />
+    <Parameter Name="toDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="designation" Type="nvarchar" Mode="In" />
+    <Parameter Name="empType" Type="int" Mode="In" />
+    <Parameter Name="iscurrentCompany" Type="int" Mode="In" />
+    <Parameter Name="EmploymentID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="P_SEL_GET_EMPLOYEE_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="P_SEL_LOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EMAIL" Type="varchar" Mode="In" />
+    <Parameter Name="PASSWORD" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="P_UPD_EMPLOYEE_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EMPID" Type="int" Mode="In" />
+    <Parameter Name="EMPLOYEE_FIRSTNAME" Type="varchar" Mode="In" />
+    <Parameter Name="EMPLOYEE_LASTNAME" Type="varchar" Mode="In" />
+    <Parameter Name="COUNTRYCODE" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOBILENUMBER" Type="varchar" Mode="In" />
+    <Parameter Name="SSN" Type="int" Mode="In" />
+    <Parameter Name="UID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="APEXModelStoreContainer">
+    <EntitySet Name="TAbout" EntityType="Self.TAbout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAddress" EntityType="Self.TAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TContact" EntityType="Self.TContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEmployee" EntityType="Self.TEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEmployer" EntityType="Self.TEmployer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TManager" EntityType="Self.TManager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TReferences" EntityType="Self.TReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TResume" EntityType="Self.TResume" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRevenue" EntityType="Self.TRevenue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TSkills" EntityType="Self.TSkills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TUSER" EntityType="Self.TUSER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TworkHistory" EntityType="Self.TworkHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TWorklocation" EntityType="Self.TWorklocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TWorkRoles" EntityType="Self.TWorkRoles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__TAddress__UserId__2FCF1A8A" Association="Self.FK__TAddress__UserId__2FCF1A8A">
+      <End Role="TUSER" EntitySet="TUSER" />
+      <End Role="TAddress" EntitySet="TAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TEmployee__Mobil__30C33EC3" Association="Self.FK__TEmployee__Mobil__30C33EC3">
+      <End Role="TContact" EntitySet="TContact" />
+      <End Role="TEmployee" EntitySet="TEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TEmployee__Resum__31B762FC" Association="Self.FK__TEmployee__Resum__31B762FC">
+      <End Role="TResume" EntitySet="TResume" />
+      <End Role="TEmployee" EntitySet="TEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TEmployee__useri__32AB8735" Association="Self.FK__TEmployee__useri__32AB8735">
+      <End Role="TUSER" EntitySet="TUSER" />
+      <End Role="TEmployee" EntitySet="TEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TEmployer__About__339FAB6E" Association="Self.FK__TEmployer__About__339FAB6E">
+      <End Role="TAbout" EntitySet="TAbout" />
+      <End Role="TEmployer" EntitySet="TEmployer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TEmployer__Addre__3493CFA7" Association="Self.FK__TEmployer__Addre__3493CFA7">
+      <End Role="TAddress" EntitySet="TAddress" />
+      <End Role="TEmployer" EntitySet="TEmployer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TEmployer__Reven__3587F3E0" Association="Self.FK__TEmployer__Reven__3587F3E0">
+      <End Role="TRevenue" EntitySet="TRevenue" />
+      <End Role="TEmployer" EntitySet="TEmployer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TManager__contac__367C1819" Association="Self.FK__TManager__contac__367C1819">
+      <End Role="TContact" EntitySet="TContact" />
+      <End Role="TManager" EntitySet="TManager" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TReferenc__Conta__37703C52" Association="Self.FK__TReferenc__Conta__37703C52">
+      <End Role="TContact" EntitySet="TContact" />
+      <End Role="TReferences" EntitySet="TReferences" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TReferenc__UserI__3864608B" Association="Self.FK__TReferenc__UserI__3864608B">
+      <End Role="TEmployee" EntitySet="TEmployee" />
+      <End Role="TReferences" EntitySet="TReferences" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TResume__AboutID__395884C4" Association="Self.FK__TResume__AboutID__395884C4">
+      <End Role="TAbout" EntitySet="TAbout" />
+      <End Role="TResume" EntitySet="TResume" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TSkills__EmpId__46B27FE2" Association="Self.FK__TSkills__EmpId__46B27FE2">
+      <End Role="TEmployee" EntitySet="TEmployee" />
+      <End Role="TSkills" EntitySet="TSkills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TworkHist__CompI__3A4CA8FD" Association="Self.FK__TworkHist__CompI__3A4CA8FD">
+      <End Role="TEmployer" EntitySet="TEmployer" />
+      <End Role="TworkHistory" EntitySet="TworkHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TworkHist__locat__3C34F16F" Association="Self.FK__TworkHist__locat__3C34F16F">
+      <End Role="TWorklocation" EntitySet="TWorklocation" />
+      <End Role="TworkHistory" EntitySet="TworkHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TworkHist__Manag__3D2915A8" Association="Self.FK__TworkHist__Manag__3D2915A8">
+      <End Role="TManager" EntitySet="TManager" />
+      <End Role="TworkHistory" EntitySet="TworkHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TworkHistory__RR__3E1D39E1" Association="Self.FK__TworkHistory__RR__3E1D39E1">
+      <End Role="TAbout" EntitySet="TAbout" />
+      <End Role="TworkHistory" EntitySet="TworkHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TWorkRoles__WHID__3F115E1A" Association="Self.FK__TWorkRoles__WHID__3F115E1A">
+      <End Role="TworkHistory" EntitySet="TworkHistory" />
+      <End Role="TWorkRoles" EntitySet="TWorkRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
